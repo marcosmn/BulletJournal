@@ -1,21 +1,31 @@
 {
-  "name": "front-end",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4",
-    "react-toastify": "^4.2.3"
+  "name": "BJ-api",
+  "version": "0.0.1",
+  "description": "API do Bullet Journal",
+  "main": "src/server.js",
+  "engines": {
+    "node": "10.11.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "nodemon bootstrap",
+    "postinstall": "knex migrate:latest"
   },
-  "engines": {
-    "npm": "6.2.0",
-    "node": "10.8.0"
+  "keywords": [
+    "api",
+    "todo",
+    "tarefas",
+    "hapi"
+  ],
+  "author": "L A MINORA",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "hapi": "^17.6.0",
+    "knex": "^0.15.2",
+    "nodemon": "^1.18.4",
+    "sqlite3": "^4.0.2"
   }
 }
