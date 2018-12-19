@@ -72,17 +72,17 @@ class NewUser extends Component {
     });
   }
 
-  renderName() {
+  renderTitulo() {
     return (
       <section>
         <Label 
-          htmlFor="name" 
-          text="Quem é você?" 
+          htmlFor="tarefa" 
+          text="Digite o titulo da tarefa" 
           invalidValue={this.state.validation.invalidName}
         />
         <Input 
-          id="name" 
-          placeholder="Digite seu nome" 
+          id="tarefa" 
+          placeholder="Titulo da tarefa..." 
           maxLength="40" 
           readOnly={this.state.completedFirstView}
           invalidValue={this.state.validation.invalidName}
@@ -177,7 +177,7 @@ class NewUser extends Component {
     return (
       <div className="center">
         <form className="pure-form pure-form-stacked">
-          {this.renderName()}
+          {this.renderTitulo()}
           {this.renderGender()}
           {this.renderAvatar()}
           {this.renderButtons()}
