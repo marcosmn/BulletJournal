@@ -2,7 +2,7 @@ import React from 'react';
 
 import Image from '../Image';
 
-export default function GenderImage(props) {
+export default function ImagemValidade(props) {
   return (
     <Image 
         x={0}
