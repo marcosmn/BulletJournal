@@ -3,19 +3,21 @@ import React, { Component } from 'react';
 import { FlatList, StatusBar, View } from 'react-native';
 import { connect } from 'react-redux';
 
-import currencies from '../data/currencies';
+import tarefas from '../data/tarefas';
 import { ListItem } from '../components/List';
-import { changeBaseCurrency, changeQuoteCurrency } from '../actions/currencies';
+/*import { changeBaseCurrency, changeQuoteCurrency } from '../actions/tarefas';*/
 
-class CurrencyList extends Component {
+class ListaTarefas extends Component {
   static propTypes = {
     navigation: PropTypes.object,
     dispatch: PropTypes.func,
+	/*
     baseCurrency: PropTypes.string,
     quoteCurrency: PropTypes.string,
+	*/
     primaryColor: PropTypes.string,
   };
-
+/*
   handlePress = (currency) => {
     const { type } = this.props.navigation.state.params;
     if (type === 'base') {
@@ -25,18 +27,19 @@ class CurrencyList extends Component {
     }
     this.props.navigation.goBack(null);
   };
-
+*/
   render() {
-    let comparisonCurrency = this.props.baseCurrency;
+    /*
+	let comparisonCurrency = this.props.baseCurrency;
     if (this.props.navigation.state.params.type === 'quote') {
       comparisonCurrency = this.props.quoteCurrency;
     }
-
+	*/
     return (
       <View>
         <StatusBar translucent={false} barStyle="default" />
         <FlatList
-          data={currencies}
+          data={tarefas}
           renderItem={({ item }) => (
             <ListItem
               text={item}
@@ -53,11 +56,13 @@ class CurrencyList extends Component {
 }
 
 const mapStateToProps = state => ({
+	/*
   baseCurrency: state.currencies.baseCurrency,
   quoteCurrency: state.currencies.quoteCurrency,
+  */
   primaryColor: state.theme.primaryColor,
 });
 
-export default connect(mapStateToProps)(CurrencyList);
+export default connect(mapStateToProps)(ListaTarefas);
 
 
